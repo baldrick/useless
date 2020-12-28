@@ -46,12 +46,14 @@ void switchOff() {
     case 0:
     case 1:
     case 2:
+      amy();
+      break;
     case 3:
     case 4:
-      simple();
-      break;
     case 5:
     case 6:
+      simple();
+      break;
     case 7:
     case 8:
     case 9:
@@ -97,4 +99,15 @@ void tentative() {
   delay(500);
   pArmServo->moveToPercent(0, Speed::FAST, Steps::LARGE);
   pLidServo->moveToPercent(0, Speed::FAST, Steps::MEDIUM);
+}
+
+void amy() {
+  pLidServo->moveToPercent(100, Speed::NORMAL, Steps::MEDIUM);
+  pArmServo->moveToPercent(30, Speed::NORMAL, Steps::MEDIUM);
+  pHeadServo->moveToPercent(0, Speed::FAST, Steps::SMALL);
+  pHeadServo->moveToPercent(100, Speed::FAST, Steps::SMALL);
+  pHeadServo->moveToPercent(50, Speed::FAST, Steps::SMALL);
+  pArmServo->moveToPercent(100, Speed::FAST, Steps::SMALL);
+  pArmServo->moveToPercent(0, Speed::FAST, Steps::SMALL);
+  pLidServo->moveToPercent(0, Speed::FAST, Steps::SMALL);
 }
