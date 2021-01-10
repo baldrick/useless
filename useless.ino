@@ -45,10 +45,12 @@ void switchOff() {
   switch (algorithm) {
     case 0:
     case 1:
-    case 2:
       amy();
       break;
+    case 2:
     case 3:
+      holly();
+      break;
     case 4:
     case 5:
     case 6:
@@ -109,5 +111,15 @@ void amy() {
   pHeadServo->moveToPercent(50, Speed::FAST, Steps::SMALL);
   pArmServo->moveToPercent(100, Speed::FAST, Steps::SMALL);
   pArmServo->moveToPercent(0, Speed::FAST, Steps::SMALL);
+  pLidServo->moveToPercent(0, Speed::FAST, Steps::SMALL);
+}
+
+void holly() {
+  pLidServo->moveToPercent(100, Speed::SLOW, Steps::SMALL);
+  pArmServo->moveToPercent(50, Speed::NORMAL, Steps::LARGE);
+  pHeadServo->moveToPercent(20, Speed::FAST, Steps::MEDIUM);
+  pHeadServo->moveToPercent(85, Speed::FASTEST, Steps::SMALL);
+  pArmServo->moveToPercent(100, Speed::FAST, Steps::SMALL);
+  pArmServo->moveToPercent(0, Speed::NORMAL, Steps::SMALL);
   pLidServo->moveToPercent(0, Speed::FAST, Steps::SMALL);
 }
